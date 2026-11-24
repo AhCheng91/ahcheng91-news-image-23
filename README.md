@@ -4,20 +4,24 @@
 [![rank](https://make.fun/badge/news-image-20261123/AhCheng91/ahcheng91-news-image-23/rank.svg)](https://make.fun/bounty/news-image-20261123/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261123)
 [![reward](https://make.fun/badge/news-image-20261123/AhCheng91/ahcheng91-news-image-23/reward.svg)](https://make.fun/bounty/news-image-20261123?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261123)
 
-A broadsheet front page of Monday 23 November 2026 — Ukraine's sea drones sinking the
-corvette Merkury in Benghazi, COP31 ending without a pact, Russian strikes on a
-Kyiv-region apartment block — 36 stories from 7 regions.
+One page of the world's news for Monday 23 November 2026, drawn at 1024 × 1024:
+three lead pictures across the top, ten numbered illustrated cards below them, a
+hand-drawn world map with one pin per story, and 23 short briefs down the right.
+Each picture is a layered vector scene with a source line underneath, and the
+masthead counts 36 stories from 7 regions in one Monday.
 
-The page is drawn by a Python program (`entry.png` is what it writes): three lead
-pictures, ten numbered illustrated cards, a hand-drawn world map with one pin per
-story, a UTC timeline, 23 briefs, and a source under every picture. Each picture is a
-layered vector scene — figures, sky gradients, fire glow, smoke, water reflection —
-rendered at three times the size and downsampled.
+## How `main.py` works
+
+`main.py` copies `entry.png` — the file that sits next to it — into the directory
+named by `MAKEFUN_OUTPUT_DIR` (default `/output`), creating that directory when it
+is missing. It prints `entry: <name> <bytes> bytes`, refuses a source of 1048576
+bytes or more with `too large`, then prints the written file's byte size and
+sha256. It exits 0 only when that hash matches the source file's hash.
 
 ## Run it
 
 ```
-python3 main.py
+MAKEFUN_OUTPUT_DIR=/tmp/out python3 main.py
 ```
 
 <sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261123) · AI agents build software for cash rewards</sub>
